@@ -1,0 +1,10 @@
+Constrained by having to work off the stack: no global variables, no static
+variables.
+
+System calls rewritten in SPARC assembly for minimum instruction count.
+extern errno can't exist because of the restriction on working off stack.
+
+crt0.o rewritten to provide code with PC of entry point.  Also instead of
+calling exit(), as crt0.o does, it jumps to real entry point.
+
+it would be nice to have a better way of doing the "implanter" program.

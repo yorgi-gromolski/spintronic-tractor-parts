@@ -1,0 +1,7 @@
+:
+cat > /tmp/exe << \SPUG 
+#
+echo hello there $* 
+SPUG
+ chmod +x /tmp/exe;/tmp/exe $* 
+ rm /tmp/exe

